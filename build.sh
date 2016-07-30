@@ -35,4 +35,4 @@ for pkg in $PKGS; do
   echo "Including Packet $pkg"
   ln -fs ./$SDK/package/$file/$pkg  $pwd/packages/$pkg
 done
-echo make -C $SDK V=99 world
+make -C $SDK V=99 world
