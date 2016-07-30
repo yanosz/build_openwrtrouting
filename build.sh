@@ -33,6 +33,6 @@ pwd=$(pwd)
 #Linking packages
 for pkg in $PKGS; do
   echo "Including Packet $pkg"
-  ln -fs ./$SDK/package/$file/$pkg  $pwd/packages/$pkg
+  ln -fs $pwd/packages/$pkg ./$SDK/package/$file/$pkg  
 done
 make -C $SDK V=99 world
