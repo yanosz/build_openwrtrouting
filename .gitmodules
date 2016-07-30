@@ -1,0 +1,6 @@
+[submodule "for-15.05"]
+	path = for-15.05
+	url = https://github.com/openwrt-routing/packages.git
+[submodule "packages"]
+	path = packages
+	url = https://github.com/openwrt-routing/packages.git
