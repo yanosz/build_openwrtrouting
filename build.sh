@@ -36,7 +36,16 @@ for pkg in $PKGS; do
   ln -fs $pwd/packages/$pkg ./$SDK/package/$file/$pkg  
 done
 
+# For Building gluon libucc from OpenWRT must be present
+# Since it's not part of the SDK - it has to be built in addition
+
+#ln -fs $pwd/openwrt-packages/libs/libuecc ./$SDK/package/libuecc
+
+
 #Link gluon packages
-ln -fs ./$SDK/package/gluon $pwd/gluon-packages
+ln -fs $pwd/gluon-packages ./$SDK/package/gluon
+
+#Remove ecdsautils: br0ken buld
+rm -Rf $pwd/gluon-packages/utils/ecdsautils
 
 make -C $SDK V=99 world
