@@ -7,10 +7,10 @@ if [ -z $SDK ];then
 fi
 
 if [ -z $SDK_URL ]; then
-  SDK_URL="http://ftp.stw-bonn.de/pub/openwrt/chaos_calmer/15.05.1/ar71xx/generic/$SDK_FOLDER.tar.bz2"
+  SDK_URL="http://ftp.stw-bonn.de/pub/openwrt/chaos_calmer/15.05.1/ar71xx/generic/$SDK.tar.bz2"
 fi
 
-if [ -u $PKGS ]; then
+if [ -z $PKGS ]; then
   PKGS="batman-adv batctl"
 fi
 
@@ -35,4 +35,8 @@ for pkg in $PKGS; do
   echo "Including Packet $pkg"
   ln -fs $pwd/packages/$pkg ./$SDK/package/$file/$pkg  
 done
+
+#Link gluon packages
+ln -fs ./$SDK/package/gluon $pwd/gluon-packages
+
 make -C $SDK V=99 world

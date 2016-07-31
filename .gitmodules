@@ -4,3 +4,6 @@
 [submodule "packages"]
 	path = packages
 	url = https://github.com/openwrt-routing/packages.git
+[submodule "gluon-packages"]
+	path = gluon-packages
+	url = https://github.com/freifunk-gluon/packages.git
