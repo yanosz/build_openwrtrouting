@@ -17,6 +17,8 @@ fi
 BUILD_KEY=''
 if ! [ -z $CONFIG_BUILD_KEY ]; then
   BUILD_KEY="BUILD_KEY=$CONFIG_BUILD_KEY"
+fi
+
 IFS=' '
 
 
