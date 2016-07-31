@@ -14,6 +14,9 @@ if [ -z $PKGS ]; then
   PKGS="batman-adv batctl"
 fi
 
+BUILD_KEY=''
+if ! [ -z $CONFIG_BUILD_KEY ]; then
+  BUILD_KEY="BUILD_KEY=$CONFIG_BUILD_KEY"
 IFS=' '
 
 
@@ -48,4 +51,4 @@ ln -fs $pwd/gluon-packages ./$SDK/package/gluon
 #Remove ecdsautils: br0ken buld
 rm -Rf $pwd/gluon-packages/utils/ecdsautils
 
-make -C $SDK V=99 world
+make -C $SDK V=99 $BUILD_KEY world
