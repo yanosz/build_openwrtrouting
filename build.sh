@@ -11,7 +11,7 @@ if [ -z $SDK_URL ]; then
 fi
 
 if [ -z $PKGS ]; then
-  PKGS="batman-adv batctl"
+  PKGS="batman-adv batctl babeld"
 fi
 
 BUILD_KEY=''
